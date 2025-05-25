@@ -11,7 +11,7 @@ class BookType(DjangoObjectType):
         filter_fields = {
             "title": ["exact", "icontains", "istartswith"],
             "author": ["exact", "icontains"],
-            "year": ["exact", "gt", "lt"],
+            "published_date": ["exact", "gt", "lt"],
         }
         interfaces = (graphene.relay.Node,)
 
