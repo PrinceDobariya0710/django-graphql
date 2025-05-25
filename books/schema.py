@@ -16,6 +16,20 @@ class BookType(DjangoObjectType):
         interfaces = (graphene.relay.Node,)
 
 
+# Sample query from frontend
+# query MyQuery {
+#   allBooks(title_Icontains: "blood") {
+#     edges {
+#       node {
+#         id
+#         title
+#         author
+#       }
+#     }
+#   }
+# }
+
+
 class Query(graphene.ObjectType):
     book = graphene.relay.Node.Field(BookType)
     all_books = DjangoFilterConnectionField(BookType)
